@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "Grey Jeans",
+    "image": "/Images/img1.jpg",
+    "price": "$99",
+    "category": "Clothing"
+  },
+  {
+    "id": 2,
+    "title": "Denim Jacket",
+    "image": "https://example.com/images/jacket.jpg",
+    "price": "$80",
+    "category": "Clothing"
+  }
+]

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail - PureCart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Frontend/css/cardDetail.css">
+</head>
+<body>
+    <div id="top-head">
+        <div id="title">Sign Up And Get <span>20% OFF</span> On Your First Order!</div>
+    </div>
+    
+    <header>
+        <nav>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div id="navigation">
+                <div id="left-top">
+                    <div id="logo">Pure-<span>Cart</span></div>
+                </div>
+                
+                <div id="right-top">
+                    <div id="icons">
+                        <span id="cart">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <a href="/Frontend/pages/cart.html"><span class="cart-count">3</span></a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Product Detail Section -->
+    <div class="product-detail-container">
+        <div class="breadcrumb">
+            <a href="#">Home</a> / <a href="#">Electronics</a> / <a href="#">Headphones</a> / Wireless Earbuds Pro
+        </div>
+        
+        <div class="product-detail">
+            <div class="product-gallery">
+                <img id="mainImage" src="" alt="" class="main-image">
+                <div class="thumbnail-container">
+                    <img src="" alt="Thumbnail 1" class="thumbnail active" onclick="changeImage(this)">
+                    <img src="" alt="Thumbnail 2" class="thumbnail" onclick="changeImage(this)">
+                    <img src="" alt="Thumbnail 3" class="thumbnail" onclick="changeImage(this)">
+                    <img src="" alt="Thumbnail 4" class="thumbnail" onclick="changeImage(this)">
+                </div>
+            </div>
+            
+            <div class="product-info">
+                <h1 class="product-title"></h1>
+                <div class="product-category"></div>
+                <div class="product-price"></div>
+                
+                <div class="product-rating">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="reviews">(248 reviews)</div>
+                </div>
+                
+                <p class="product-description"></p>
+                
+                <div class="product-specs">
+                    <h3 class="specs-title">Specifications</h3>
+                    <ul class="specs-list"></ul>
+                </div>
+                
+                <div class="color-options">
+                    <div class="option-title">Color:</div>
+                    <div class="colors">
+                        <div class="color active" style="background-color: #000;"></div>
+                        <div class="color" style="background-color: #fff; border: 1px solid #ddd;"></div>
+                        <div class="color" style="background-color: #e91e63;"></div>
+                        <div class="color" style="background-color: #2196f3;"></div>
+                    </div>
+                </div>
+                
+                <div class="quantity-selector">
+                    <div class="option-title">Quantity:</div>
+                    <button class="qty-btn" onclick="updateQuantity(-1)">-</button>
+                    <input type="number" class="qty-input" value="1" min="1" id="quantity">
+                    <button class="qty-btn" onclick="updateQuantity(1)">+</button>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="addToCart()">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-heart"></i> Add to Wishlist
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Related Products -->
+        <div class="related-products">
+            <h2 class="section-title">You May Also Like</h2>
+            <div class="products-grid">
+                <!-- Related products will be populated here -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About PureCart</h4>
+                <p>We're your premier destination for the latest fashion and cutting-edge electronics. Our mission is to provide quality products at competitive prices with exceptional customer service.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Shop Categories</h4>
+                <ul>
+                    <li><a href="#">Men's Clothing</a></li>
+                    <li><a href="#">Women's Fashion</a></li>
+                    <li><a href="#">Electronics & Gadgets</a></li>
+                    <li><a href="#">Home & Kitchen</a></li>
+                    <li><a href="#">Beauty & Health</a></li>
+                    <li><a href="#">Sports & Outdoors</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">Track Your Order</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Shopping Street, Retail City</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> support@purecart.com</p>
+                <p><i class="fas fa-clock"></i> Mon-Sat: 9AM - 8PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 PureCart. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--primary-color);"></i> for shoppers</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sample product data
+        const productsData = [
+                                {
+                                  "id": 1,
+                                  "title": "Men's Slim Fit Jeans",
+                                  "image": "/images/img1.jpg",
+                                  "price": "$59",
+                                  "category": "Clothing",
+                                  "description": "Classic slim fit jeans with stretchable denim for all-day comfort and style.",
+                                  "specs": [
+                                    { "name": "Material", "value": "98% Cotton, 2% Elastane" },
+                                    { "name": "Fit", "value": "Slim Fit" }
+                                  ]
+                                },
+                                {
+                                  "id": 2,
+                                  "title": "Women's Summer Dress",
+                                  "image": "/images/img2.jpg",
+                                  "price": "$45",
+                                  "category": "Clothing",
+                                  "description": "Lightweight and breathable floral summer dress, perfect for warm weather outings.",
+                                  "specs": [
+                                    { "name": "Material", "value": "100% Cotton" },
+                                    { "name": "Length", "value": "Knee Length" }
+                                  ]
+                                },
+                                {
+                                  "id": 3,
+                                  "title": "Men's Casual Shirt",
+                                  "image": "/images/img3.jpg",
+                                  "price": "$39",
+                                  "category": "Clothing",
+                                  "description": "Versatile button-up shirt ideal for both casual and semi-formal looks.",
+                                  "specs": [
+                                    { "name": "Sleeve", "value": "Full Sleeve" },
+                                    { "name": "Fabric", "value": "Cotton Blend" }
+                                  ]
+                                },
+                                {
+                                  "id": 4,
+                                  "title": "Women's Denim Jacket",
+                                  "image": "/images/img4.jpg",
+                                  "price": "$75",
+                                  "category": "Clothing",
+                                  "description": "Stylish cropped denim jacket that adds an edge to any outfit.",
+                                  "specs": [
+                                    { "name": "Material", "value": "Denim" },
+                                    { "name": "Closure", "value": "Buttoned" }
+                                  ]
+                                },
+                                {
+                                  "id": 5,
+                                  "title": "Unisex Hoodie",
+                                  "image": "/images/img5.jpg",
+                                  "price": "$49",
+                                  "category": "Clothing",
+                                  "description": "Comfortable unisex hoodie with a soft fleece lining and front pouch pocket.",
+                                  "specs": [
+                                    { "name": "Material", "value": "Cotton-Poly Blend" },
+                                    { "name": "Features", "value": "Drawstring Hood, Kangaroo Pocket" }
+                                  ]
+                                },
+                                {
+                                  "id": 6,
+                                  "title": "Men's Formal Suit",
+                                  "image": "/images/img6.jpg",
+                                  "price": "$129",
+                                  "category": "Clothing",
+                                  "description": "Elegant two-piece suit tailored for a sharp and professional appearance.",
+                                  "specs": [
+                                    { "name": "Pieces", "value": "Blazer & Trousers" },
+                                    { "name": "Fabric", "value": "Polyester Viscose Blend" }
+                                  ]
+                                },
+                                {
+                                  "id": 7,
+                                  "title": "Women's Athletic Leggings",
+                                  "image": "/images/img7.jpg",
+                                  "price": "$35",
+                                  "category": "Clothing",
+                                  "description": "High-waisted athletic leggings with moisture-wicking fabric for comfort during workouts.",
+                                  "specs": [
+                                    { "name": "Waist", "value": "High Rise" },
+                                    { "name": "Material", "value": "Nylon-Spandex Blend" }
+                                  ]
+                                },
+                                {
+                                  "id": 8,
+                                  "title": "Designer T-Shirt",
+                                  "image": "/images/img8.jpg",
+                                  "price": "$29",
+                                  "category": "Clothing",
+                                  "description": "Trendy designer tee featuring a modern cut and eye-catching print.",
+                                  "specs": [
+                                    { "name": "Fit", "value": "Regular Fit" },
+                                    { "name": "Fabric", "value": "100% Cotton" }
+                                  ]
+                                },
+                                {
+                                  "id": 9,
+                                  "title": "Wireless Earbuds",
+                                  "image": "/images/img9.jpg",
+                                  "price": "$79",
+                                  "category": "Electronics",
+                                  "description": "Experience crystal-clear sound and deep bass with our compact, high-performance wireless earbuds.",
+                                  "specs": [
+                                    { "name": "Battery Life", "value": "Up to 8 hours" },
+                                    { "name": "Charging", "value": "Wireless & USB-C" }
+                                  ]
+                                },
+                                {
+                                  "id": 10,
+                                  "title": "Smart Home Speaker",
+                                  "image": "/images/img10.jpg",
+                                  "price": "$129",
+                                  "category": "Electronics",
+                                  "description": "Smart speaker with integrated voice assistant and powerful room-filling sound.",
+                                  "specs": [
+                                    { "name": "Connectivity", "value": "Wi-Fi, Bluetooth" },
+                                    { "name": "Voice Assistant", "value": "Yes (Alexa/Google Assistant)" }
+                                  ]
+                                },
+                                {
+                                  "id": 11,
+                                  "title": "Bluetooth Headphones",
+                                  "image": "/images/img11.jpg",
+                                  "price": "$99",
+                                  "category": "Electronics",
+                                  "description": "Over-ear Bluetooth headphones with active noise cancellation and premium sound.",
+                                  "specs": [
+                                    { "name": "Noise Cancellation", "value": "Active" },
+                                    { "name": "Battery Life", "value": "Up to 30 hours" }
+                                  ]
+                                },
+                                {
+                                  "id": 12,
+                                  "title": "Smart Watch",
+                                  "image": "/images/img12.jpg",
+                                  "price": "$199",
+                                  "category": "Electronics",
+                                  "description": "Track your fitness, monitor your heart rate, and stay connected with this sleek smart watch.",
+                                  "specs": [
+                                    { "name": "Display", "value": "1.4-inch AMOLED" },
+                                    { "name": "Water Resistance", "value": "5 ATM" }
+                                  ]
+                                },
+                                {
+                                  "id": 13,
+                                  "title": "4K Action Camera",
+                                  "image": "/images/img12.jpg",
+                                  "price": "$149",
+                                  "category": "Electronics",
+                                  "description": "Capture every adventure in stunning 4K with this compact, waterproof action camera.",
+                                  "specs": [
+                                    { "name": "Resolution", "value": "4K UHD" },
+                                    { "name": "Waterproof", "value": "Up to 30m" }
+                                  ]
+                                },
+                                {
+                                  "id": 14,
+                                  "title": "Wireless Charger",
+                                  "image": "/images/img12.jpg",
+                                  "price": "$29",
+                                  "category": "Electronics",
+                                  "description": "Fast and convenient wireless charging pad for Qi-compatible devices.",
+                                  "specs": [
+                                    { "name": "Output Power", "value": "10W" },
+                                    { "name": "Compatibility", "value": "Qi-enabled Devices" }
+                                  ]
+                                },
+                                {
+                                  "id": 15,
+                                  "title": "Portable SSD Drive",
+                                  "image": "/images/img12.jpg",
+                                  "price": "$89",
+                                  "category": "Electronics",
+                                  "description": "Ultra-fast portable SSD with compact design and USB 3.2 support.",
+                                  "specs": [
+                                    { "name": "Storage", "value": "500GB" },
+                                    { "name": "Interface", "value": "USB 3.2 Type-C" }
+                                  ]
+                                },
+                                {
+                                  "id": 16,
+                                  "title": "Smartphone Gimbal",
+                                  "image": "/images/img12.jpg",
+                                  "price": "$79",
+                                  "category": "Electronics",
+                                  "description": "3-axis smartphone gimbal stabilizer for smooth and cinematic video recording.",
+                                  "specs": [
+                                    { "name": "Stabilization", "value": "3-axis motorized" },
+                                    { "name": "Battery Life", "value": "Up to 12 hours" }
+                                  ]
+                                }
+                              ];
+
+        // Function to change the main image when thumbnail is clicked
+        function changeImage(element) {
+            const mainImage = document.getElementById('mainImage');
+            mainImage.src = element.src.replace('200x200', '800x800');
+            
+            // Update active thumbnail
+            document.querySelectorAll('.thumbnail').forEach(thumb => {
+                thumb.classList.remove('active');
+            });
+            element.classList.add('active');
+        }
+        
+        // Update quantity
+        function updateQuantity(change) {
+            const qtyInput = document.getElementById('quantity');
+            let currentQty = parseInt(qtyInput.value);
+            currentQty += change;
+            
+            if (currentQty < 1) currentQty = 1;
+            qtyInput.value = currentQty;
+        }
+        
+        // Add to cart functionality
+        function addToCart() {
+            const qtyInput = document.getElementById('quantity');
+            const quantity = parseInt(qtyInput.value);
+            const cartCount = document.querySelector('.cart-count');
+            
+            // Animation and feedback
+            const btn = document.querySelector('.btn-primary');
+            btn.innerHTML = '<i class="fas fa-check"></i> Added to Cart';
+            btn.style.background = '#28a745';
+            
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-shopping-cart"></i> Add to Cart';
+                btn.style.background = '';
+            }, 2000);
+            
+            // Update cart count
+            const currentCount = parseInt(cartCount.textContent);
+            cartCount.textContent = currentCount + quantity;
+            
+            // Show notification
+            const notification = document.createElement('div');
+            notification.textContent = `Added ${quantity} item(s) to your cart!`;
+            notification.style.position = 'fixed';
+            notification.style.bottom = '20px';
+            notification.style.right = '20px';
+            notification.style.backgroundColor = '#28a745';
+            notification.style.color = 'white';
+            notification.style.padding = '15px 25px';
+            notification.style.borderRadius = '8px';
+            notification.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)';
+            notification.style.zIndex = '1000';
+            notification.style.opacity = '0';
+            notification.style.transform = 'translateY(20px)';
+            notification.style.transition = 'all 0.3s ease';
+            
+            document.body.appendChild(notification);
+            
+            // Animate in
+            setTimeout(() => {
+                notification.style.opacity = '1';
+                notification.style.transform = 'translateY(0)';
+            }, 10);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                notification.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // Load product details based on ID
+        function loadProductDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = parseInt(urlParams.get('id'));
+            const product = productsData.find(p => p.id === productId);
+
+            if (product) {
+                document.getElementById('mainImage').src = product.image;
+                document.querySelector('.product-title').textContent = product.title;
+                document.querySelector('.product-category').textContent = product.category;
+                document.querySelector('.product-price').textContent = product.price;
+                document.querySelector('.product-description').textContent = product.description;
+
+                const specsList = document.querySelector('.specs-list');
+                product.specs.forEach(spec => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<span class="spec-name">${spec.name}:</span> <span class="spec-value">${spec.value}</span>`;
+                    specsList.appendChild(li);
+                });
+            }
+        }
+
+        // Call the function to load product details
+        loadProductDetails();
+    </script>
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PureCart - Premium Shopping Experience</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Frontend/css/style.css">
+</head>
+<body>
+    <div id="top-head">
+        <div id="title">Sign Up And Get <span>20% OFF</span> On Your First Order!</div>
+    </div>
+    
+    <header>
+        <nav>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div id="navigation">
+                <div id="left-top">
+                    <div id="logo">Pure-Cart</div>
+                </div>
+                
+                <div id="right-top">
+                    <div class="search-container" id="search-container">
+                        <input type="text" class="search-input" placeholder="Search products..." />
+                        <button type="button" class="search-icon" id="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <button class="search-btn">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <div id="icons">
+                        <span id="cart">
+                            <a href="/Frontend/pages/cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Mobile Navigation -->
+    <div class="overlay" id="overlay"></div>
+    <div class="mobile-nav" id="mobile-nav">
+        <button class="close-menu" id="close-menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul>
+            <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#"><i class="fas fa-tshirt"></i> Clothing</a></li>
+            <li><a href="#"><i class="fas fa-mobile-alt"></i> Electronics</a></li>
+            <li><a href="#"><i class="fas fa-home"></i> Home Decor</a></li>
+            <li><a href="#"><i class="fas fa-book"></i> Books</a></li>
+            <li><a href="#"><i class="fas fa-dumbbell"></i> Fitness</a></li>
+            <li><a href="#"><i class="fas fa-heart"></i> Beauty</a></li>
+            <li><a href="#"><i class="fas fa-shopping-bag"></i> Bags</a></li>
+            <li><a href="#"><i class="fas fa-shoe-prints"></i> Shoes</a></li>
+        </ul>
+    </div>
+    
+    <!-- Slider Section -->
+    <div id="best-deals">
+        <div class="slider">
+            <div class="slides">
+                <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&h=600&q=80" alt="Summer Collection">
+                <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&h=600&q=80" alt="Fashion Sale">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&h=600&q=80" alt="Electronics">
+            </div>
+            <button class="slider-btn prev">&lt;</button>
+            <button class="slider-btn next">&gt;</button>
+            <div class="indicators"></div>
+        </div>
+    </div>
+
+    <!-- Products -->
+    <div id="products">
+        <div id="labels">
+            <label for="Clothings" class="section-title">Clothing For Men And Women</label>
+        </div>
+        <div id="all-cloths"></div>
+
+        <div id="labels">
+            <label for="Clothings" class="section-title">Electronics Products</label>
+        </div>
+        <div id="electronics-products"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About PureCart</h4>
+                <p>We're your premier destination for the latest fashion and cutting-edge electronics. Our mission is to provide quality products at competitive prices with exceptional customer service.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Shop Categories</h4>
+                <ul>
+                    <li><a href="#">Men's Clothing</a></li>
+                    <li><a href="#">Women's Fashion</a></li>
+                    <li><a href="#">Electronics & Gadgets</a></li>
+                    <li><a href="#">Home & Kitchen</a></li>
+                    <li><a href="#">Beauty & Health</a></li>
+                    <li><a href="#">Sports & Outdoors</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">Track Your Order</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Shopping Street, Retail City</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> support@purecart.com</p>
+                <p><i class="fas fa-clock"></i> Mon-Sat: 9AM - 8PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 PureCart. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--primary-color);"></i> for shoppers</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Mobile menu functionality
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const closeMenuBtn = document.querySelector('#close-menu');
+            const mobileNav = document.querySelector('#mobile-nav');
+            const overlay = document.querySelector('#overlay');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileNav.classList.add('active');
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            closeMenuBtn.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+            
+            overlay.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+            
+            // --- Slider logic ---
+            const slides = document.querySelector(".slides");
+            const indicatorsContainer = document.querySelector(".indicators");
+            let currentSlide = 0;
+            const totalSlides = 3;
+            let slideInterval;
+
+            // Create indicators
+            for (let i = 0; i < totalSlides; i++) {
+                const indicator = document.createElement("div");
+                indicator.classList.add("indicator");
+                if (i === 0) indicator.classList.add("active");
+                indicator.addEventListener("click", () => goToSlide(i));
+                indicatorsContainer.appendChild(indicator);
+            }
+
+            function goToSlide(index) {
+                currentSlide = (index + totalSlides) % totalSlides;
+                updateSlider();
+                resetInterval();
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateSlider();
+                resetInterval();
+            }
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                updateSlider();
+                resetInterval();
+            }
+
+            function updateSlider() {
+                if (slides) {
+                    slides.style.transform = `translateX(-${currentSlide * 33.333}%)`;
+                }
+                document.querySelectorAll(".indicator").forEach((indicator, index) => {
+                    indicator.classList.toggle("active", index === currentSlide);
+                });
+            }
+
+            function startInterval() {
+                slideInterval = setInterval(nextSlide, 5000);
+            }
+
+            function resetInterval() {
+                clearInterval(slideInterval);
+                startInterval();
+            }
+
+            startInterval();
+
+            const nextBtn = document.querySelector(".next");
+            const prevBtn = document.querySelector(".prev");
+            if (nextBtn) nextBtn.addEventListener("click", nextSlide);
+            if (prevBtn) prevBtn.addEventListener("click", prevSlide);
+
+            // --- Populate cloth cards ---
+            const clothsData = [
+                { id: 1, title: "Men's Slim Fit Jeans", image: "/images/img1.jpg", price: "$59", category: "Clothing" },
+                { id: 2, title: "Women's Summer Dress", image: "/images/img2.jpg", price: "$45", category: "Clothing" },
+                { id: 3, title: "Men's Casual Shirt", image: "/images/img3.jpg", price: "$39", category: "Clothing" },
+                { id: 4, title: "Women's Denim Jacket", image: "/images/img4.jpg", price: "$75", category: "Clothing" },
+                { id: 5, title: "Unisex Hoodie", image: "/images/img5.jpg", price: "$49", category: "Clothing" },
+                { id: 6, title: "Men's Formal Suit", image: "/images/img6.jpg", price: "$129", category: "Clothing" },
+                { id: 7, title: "Women's Athletic Leggings", image: "/images/img7.jpg", price: "$35", category: "Clothing" },
+                { id: 8, title: "Designer T-Shirt", image: "/images/img8.jpg", price: "$29", category: "Clothing" },
+            ];
+
+            const clothContainer = document.getElementById("all-cloths");
+            if (clothContainer) {
+                clothsData.forEach((item) => {
+                    const link = document.createElement("a");
+                    link.href = `cartDetail.html?id=${item.id}&type=clothing`;
+                    link.className = "card-link";
+                    
+                    const card = document.createElement("div");
+                    card.className = "card";
+                    card.dataset.id = item.id;
+                    
+                    card.innerHTML = `
+                        <div class="card-price">${item.price}</div>
+                        <div class="card-image-container">
+                            <img src="${item.image}" alt="${item.title}" class="card-image" />
+                        </div>
+                        <div class="card-details">
+                            <span class="card-category">${item.category}</span>
+                            <h2 class="card-title">${item.title}</h2>
+                            <button class="card-button">Add to Cart</button>
+                        </div>
+                    `;
+                    
+                    link.appendChild(card);
+                    clothContainer.appendChild(link);
+                });
+            }
+
+            // --- Electronics Products ---
+            const electronicsData = [
+                { id: 9, title: "Wireless Earbuds", image: "/images/img9.jpg", price: "$79", category: "Electronics" },
+                { id: 10, title: "Smart Home Speaker", image:"/images/img10.jpg", price: "$129", category: "Electronics" },
+                { id: 11, title: "Bluetooth Headphones", image: "/images/img11.jpg", price: "$99", category: "Electronics" },
+                { id: 12, title: "Smart Watch", image: "/images/img12.jpg", price: "$199", category: "Electronics" },
+                { id: 13, title: "4K Action Camera", image: "/images/img12.jpg", price: "$149", category: "Electronics" },
+                { id: 14, title: "Wireless Charger", image: "/images/img12.jpg", price: "$29", category: "Electronics" },
+                { id: 15, title: "Portable SSD Drive", image: "/images/img12.jpg", price: "$89", category: "Electronics" },
+                { id: 16, title: "Smartphone Gimbal", image: "/images/img12.jpg", price: "$79", category: "Electronics" },
+            ];
+
+            const electronicsContainer = document.getElementById("electronics-products");
+            if (electronicsContainer) {
+                electronicsData.forEach((pro) => {
+                    const link = document.createElement("a");
+                    link.href = `cartDetail.html?id=${pro.id}&type=electronics`;
+                    link.className = "card-link";
+                    
+                    const ecard = document.createElement("div");
+                    ecard.className = "card";
+                    ecard.dataset.id = pro.id;
+                    ecard.innerHTML = `
+                        <div class="card-price">${pro.price}</div>
+                        <div class="card-image-container">
+                            <img src="${pro.image}" alt="${pro.title}" class="card-image" />
+                        </div>
+                        <div class="card-details">
+                            <span class="card-category">${pro.category}</span>
+                            <h2 class="card-title">${pro.title}</h2>
+                            <button class="card-button">Add to Cart</button>
+                        </div>
+                    `;
+                    
+                    link.appendChild(ecard);
+                    electronicsContainer.appendChild(link);
+                });
+            }
+
+            // Cart functionality
+            // Cart functionality
+const cartButtons = document.querySelectorAll('.card-button');
+cartButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+        e.stopPropagation(); // Prevent card click from triggering
+        
+        const card = this.closest('.card');
+        const title = card.querySelector('.card-title').textContent;
+        const price = parseFloat(card.querySelector('.card-price').textContent.replace('$', ''));
+        const id = card.dataset.id;
+        const image = card.querySelector('.card-image').src;
+
+        // Create cart item object
+        const cartItem = {
+            id: id,
+            title: title,
+            price: price,
+            image: image,
+            quantity: 1
+        };
+
+        // Get existing cart items from localStorage
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+        // Check if item already exists in cart
+        const existingItemIndex = cartItems.findIndex(item => item.id === id);
+        if (existingItemIndex > -1) {
+            // If it exists, increase the quantity
+            cartItems[existingItemIndex].quantity += 1;
+        } else {
+            // If it doesn't exist, add it to the cart
+            cartItems.push(cartItem);
+        }
+
+        // Save updated cart items to localStorage
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+        // Show notification
+        const notification = document.createElement('div');
+        notification.textContent = `Added ${title} to cart!`;
+        notification.style.position = 'fixed';
+        notification.style.bottom = '20px';
+        notification.style.right = '20px';
+        notification.style.backgroundColor = '#28a745';
+        notification.style.color = 'white';
+        notification.style.padding = '15px 25px';
+        notification.style.borderRadius = '8px';
+        notification.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)';
+        notification.style.zIndex = '1000';
+        notification.style.opacity = '0';
+        notification.style.transform = 'translateY(20px)';
+        notification.style.transition = 'all 0.3s ease';
+
+        document.body.appendChild(notification);
+
+        // Animate in
+        setTimeout(() => {
+            notification.style.opacity = '1';
+            notification.style.transform = 'translateY(0)';
+        }, 10);
+
+        // Remove after 3 seconds
+        setTimeout(() => {
+            notification.style.opacity = '0';
+            notification.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 300);
+        }, 3000);
+    });
+});
+
+            
+            const searchContainer = document.getElementById("search-container");
+            const searchBtn = document.getElementById("search-btn");
+
+            if (searchBtn && searchContainer) {
+                searchBtn.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    searchContainer.classList.toggle("active");
+                    if (searchContainer.classList.contains("active")) {
+                        document.querySelector('.search-input').focus();
+                    }
+                });
+
+                document.addEventListener("click", (e) => {
+                    if (!searchContainer.contains(e.target) && e.target !== searchBtn) {
+                        searchContainer.classList.remove("active");
+                    }
+                });
+            }
+
+        });
+    </script>
+</body>
+</html>

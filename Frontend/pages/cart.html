@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PureCart - Your Shopping Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Frontend/css/cart.css">
+</head>
+<body>
+    <div id="top-head">
+        <div id="title">Sign Up And Get <span>20% OFF</span> On Your First Order!</div>
+    </div>
+    
+    <header>
+        <nav>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div id="navigation">
+                <div id="left-top">
+                    <div id="logo">Pure-Cart</div>
+                </div>
+                
+                <div id="right-top">
+                    <div class="search-container" id="search-container">
+                        <input type="text" class="search-input" placeholder="Search products..." />
+                        <button type="button" class="search-icon" id="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <button class="search-btn">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <div id="icons">
+                        <span id="cart">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span id="cart-count">0</span>
+                        </span>
+                        <span id="login">
+                            <i class="fa-solid fa-user"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="cart-container">
+        <div class="cart-header">
+            <div>
+                <h1 class="cart-title">Your Shopping Cart</h1>
+                <p class="cart-subtitle" id="cart-subtitle">0 items in your cart</p>
+            </div>
+        </div>
+        
+        <div class="cart-content">
+            <div class="cart-items" id="cart-items-container">
+                <!-- Cart items will be generated dynamically here -->
+            </div>
+            
+            <div class="cart-summary">
+                <h2 class="summary-title">Order Summary</h2>
+                
+                <div class="summary-item">
+                    <span>Subtotal</span>
+                    <span id="subtotal">$0.00</span>
+                </div>
+                
+                <div class="summary-item">
+                    <span>Shipping</span>
+                    <span id="shipping">$0.00</span>
+                </div>
+                
+                <div class="summary-item">
+                    <span>Tax</span>
+                    <span id="tax">$0.00</span>
+                </div>
+                
+                <div class="summary-item summary-total">
+                    <span>Total</span>
+                    <span id="total">$0.00</span>
+                </div>
+                
+                <button class="checkout-btn">Proceed to Checkout</button>
+                <button class="continue-btn">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About PureCart</h4>
+                <p>We're your premier destination for the latest fashion and cutting-edge electronics. Our mission is to provide quality products at competitive prices with exceptional customer service.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Shop Categories</h4>
+                <ul>
+                    <li><a href="#">Men's Clothing</a></li>
+                    <li><a href="#">Women's Fashion</a></li>
+                    <li><a href="#">Electronics & Gadgets</a></li>
+                    <li><a href="#">Home & Kitchen</a></li>
+                    <li><a href="#">Beauty & Health</a></li>
+                    <li><a href="#">Sports & Outdoors</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">Track Your Order</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Shopping Street, Retail City</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> support@purecart.com</p>
+                <p><i class="fas fa-clock"></i> Mon-Sat: 9AM - 8PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 PureCart. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--primary-color);"></i> for shoppers</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sample cart data (would normally come from localStorage or API)
+document.addEventListener("DOMContentLoaded", () => {
+    const cartItemsContainer = document.getElementById('cart-items-container');
+    const cartCount = document.getElementById('cart-count');
+    const cartSubtitle = document.getElementById('cart-subtitle');
+    const subtotalEl = document.getElementById('subtotal');
+    const shippingEl = document.getElementById('shipping');
+    const taxEl = document.getElementById('tax');
+    const totalEl = document.getElementById('total');
+
+    // Render cart items from localStorage
+    function renderCartItems() {
+        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        cartItemsContainer.innerHTML = '';
+
+        if (cartItems.length === 0) {
+            cartItemsContainer.innerHTML = `
+                <div class="empty-cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h2>Your cart is empty</h2>
+                    <p>Looks like you haven't added anything to your cart yet</p>
+                    <button class="empty-cart-btn">Start Shopping</button>
+                </div>
+            `;
+            document.querySelector('.empty-cart-btn').addEventListener('click', () => {
+                window.location.href = 'index.html';
+            });
+            cartCount.textContent = '0';
+            cartSubtitle.textContent = '0 items in your cart';
+            return;
+        }
+
+        cartItems.forEach(item => {
+            const cartItemEl = document.createElement('div');
+            cartItemEl.classList.add('cart-item');
+            cartItemEl.dataset.id = item.id;
+
+            cartItemEl.innerHTML = `
+                <div class="item-image">
+                    <img src="${item.image}" alt="${item.title}">
+                </div>
+                <div class="item-details">
+                    <h3 class="item-title">${item.title}</h3>
+                    <p class="item-category">${item.category}</p>
+                    <p class="item-price">$${item.price.toFixed(2)}</p>
+                </div>
+                <div class="item-actions">
+                    <div class="quantity-controls">
+                        <button class="quantity-btn decrease"><i class="fas fa-minus"></i></button>
+                        <input type="number" class="quantity-input" value="${item.quantity}" min="1">
+                        <button class="quantity-btn increase"><i class="fas fa-plus"></i></button>
+                    </div>
+                    <button class="remove-btn">
+                        <i class="fas fa-trash-alt"></i> Remove
+                    </button>
+                </div>
+            `;
+
+            cartItemsContainer.appendChild(cartItemEl);
+        });
+
+        // Update cart info
+        updateCartInfo(cartItems);
+        attachEventListeners(cartItems);
+    }
+
+    // Update cart information (count, subtotal, etc.)
+    function updateCartInfo(cartItems) {
+        const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
+        const subtotal = cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+        const shipping = subtotal > 0 ? 0 : 0; // Free shipping for demo
+        const tax = subtotal * 0.06; // 6% tax
+        const total = subtotal + shipping + tax;
+
+        cartCount.textContent = totalItems;
+        cartSubtitle.textContent = `${totalItems} item${totalItems !== 1 ? 's' : ''} in your cart`;
+        subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
+        shippingEl.textContent = `$${shipping.toFixed(2)}`;
+        taxEl.textContent = `$${tax.toFixed(2)}`;
+        totalEl.textContent = `$${total.toFixed(2)}`;
+    }
+
+    // Attach event listeners to cart items
+    function attachEventListeners(cartItems) {
+        const decreaseBtns = document.querySelectorAll('.quantity-btn.decrease');
+        const increaseBtns = document.querySelectorAll('.quantity-btn.increase');
+        const removeBtns = document.querySelectorAll('.remove-btn');
+        const quantityInputs = document.querySelectorAll('.quantity-input');
+
+        decreaseBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const itemId = parseInt(btn.closest('.cart-item').dataset.id);
+                const item = cartItems.find(i => i.id === itemId);
+                
+                if (item.quantity > 1) {
+                    item.quantity--;
+                    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                    renderCartItems();
+                }
+            });
+        });
+
+        increaseBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const itemId = parseInt(btn.closest('.cart-item').dataset.id);
+                const item = cartItems.find(i => i.id === itemId);
+                
+                item.quantity++;
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                renderCartItems();
+            });
+        });
+
+        removeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const itemId = parseInt(btn.closest('.cart-item').dataset.id);
+                const itemIndex = cartItems.findIndex(i => i.id === itemId);
+                
+                cartItems.splice(itemIndex, 1);
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                renderCartItems();
+            });
+        });
+
+        quantityInputs.forEach(input => {
+            input.addEventListener('change', () => {
+                const itemId = parseInt(input.closest('.cart-item').dataset.id);
+                const item = cartItems.find(i => i.id === itemId);
+                const newQuantity = parseInt(input.value) || 1;
+
+                item.quantity = newQuantity;
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                renderCartItems();
+            });
+        });
+    }
+
+    // Initial render
+    renderCartItems();
+
+
+            // Proceed to checkout
+            document.querySelector('.checkout-btn').addEventListener('click', () => {
+                if (cartItems.length === 0) {
+                    alert('Your cart is empty!');
+                    return;
+                }
+                
+                alert(`Proceeding to checkout! Total: ${totalEl.textContent}`);
+            });
+            
+            // Continue shopping
+            document.querySelector('.continue-btn').addEventListener('click', () => {
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+</html>

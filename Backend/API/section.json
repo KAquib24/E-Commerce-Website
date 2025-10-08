@@ -1,0 +1,45 @@
+{
+    "sections": [
+      {
+        "title": "Top Deals on Mobiles",
+        "products": [
+          {
+            "name": "iPhone 14",
+            "price": 69999,
+            "image": "/images/iphone14.jpg"
+          },
+          {
+            "name": "Samsung Galaxy S23",
+            "price": 62999,
+            "image": "/images/samsung-s23.jpg"
+          },
+          {
+            "name": "Redmi Note 12",
+            "price": 15999,
+            "image": "/images/redmi-note12.jpg"
+          }
+        ]
+      },
+      {
+        "title": "Best of Electronics",
+        "products": [
+          {
+            "name": "Sony WH-1000XM4 Headphones",
+            "price": 24990,
+            "image": "/images/sony-headphones.jpg"
+          },
+          {
+            "name": "Boat Airdopes 141",
+            "price": 1299,
+            "image": "/images/boat-airdopes.jpg"
+          },
+          {
+            "name": "Samsung 32-inch Monitor",
+            "price": 10499,
+            "image": "..//images/samsung-monitor.jpg"
+          }
+        ]
+      }
+    ]
+  }
+  
